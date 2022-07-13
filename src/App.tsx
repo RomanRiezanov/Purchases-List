@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.scss';
+import PurchasesList from './components/PurchasesList';
 
 const App = () => {
   return (
-    <div className="App">
-      <h1>Test</h1>
+    <div className="wrapper">
+      <PurchasesList />
     </div>
   );
 };

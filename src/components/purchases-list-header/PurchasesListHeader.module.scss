@@ -1,0 +1,13 @@
+.list {
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  border: 1px dashed #ccc;
+  padding: 10px 10px;
+  width: 500px;
+  &__item {
+    text-decoration: none;
+    list-style-type: none;
+    margin-right: 100px;
+  }
+}
