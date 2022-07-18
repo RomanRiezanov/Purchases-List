@@ -1,12 +1,12 @@
-import PurchasesListHeader from './purchases-list-header';
-import PurchasesListItem from './purchases-list-item';
+import PurchasesListHeader from './purchases-list-header/PurchasesListHeader';
+import PurchasesListItem from './purchases-list-item/PurchasesListItem';
 
 const PurchasesList = () => {
   return (
-    <div>
+    <>
       <PurchasesListHeader />
       <PurchasesListItem />
-    </div>
+    </>
   );
 };
 export default PurchasesList;
