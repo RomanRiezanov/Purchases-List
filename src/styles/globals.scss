@@ -1,12 +1,12 @@
 @import "./shared/variables.scss";
 
-@import "./fonts/advent-pro.scss";
+@import "./fonts/Montserrat.scss";
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: $advent;
+  font-family: $montserrat;
   &:after {
     box-sizing: inherit;
   }
