@@ -1,5 +1,13 @@
 import styles from './PurchasesListItem.module.scss';
 
+// interface typeList {
+//   number: number;
+//   name: string;
+//   price: string;
+//   date: string;
+//   id: number;
+// }
+
 const PurchasesListItem = ({ list }: any) => {
   return (
     <div>
