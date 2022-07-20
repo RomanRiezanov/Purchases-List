@@ -1,14 +1,18 @@
-import styles from './PurchasesListItem.module.scss';
+import styles from "./PurchasesListItem.module.scss";
 
-// interface typeList {
-//   number: number;
-//   name: string;
-//   price: string;
-//   date: string;
-//   id: number;
-// }
+interface PurchasesListItemProps {
+  list: listItem;
+}
 
-const PurchasesListItem = ({ list }: any) => {
+interface listItem {
+  number: number;
+  name: string;
+  price: string;
+  date: string;
+  id: number;
+}
+
+const PurchasesListItem = ({ list }: PurchasesListItemProps) => {
   return (
     <div>
       <div className={styles.root}>
