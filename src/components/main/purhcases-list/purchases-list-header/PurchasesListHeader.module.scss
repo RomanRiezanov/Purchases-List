@@ -2,12 +2,11 @@
   font-weight: bold;
   font-size: 18px;
   display: flex;
-  border: 1px dashed #ccc;
-  padding: 10px 10px;
-  width: 500px;
+  border: 1px solid #eeeef2;
+  padding: 10px 25px;
+  justify-content: space-between;
   &__item {
     text-decoration: none;
     list-style-type: none;
-    margin-right: 100px;
   }
 }

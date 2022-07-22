@@ -14,13 +14,11 @@ interface listItem {
 
 const PurchasesListItem = ({ list }: PurchasesListItemProps) => {
   return (
-    <div>
-      <div className={styles.root}>
-        <div>{list.number}</div>
-        <div>{list.name}</div>
-        <div>{list.price}</div>
-        <div>{list.date}</div>
-      </div>
+    <div className={styles.listItem}>
+      <div>{list.number}</div>
+      <div>{list.name}</div>
+      <div>{list.price}</div>
+      <div>{list.date}</div>
     </div>
   );
 };
