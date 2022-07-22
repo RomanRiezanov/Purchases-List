@@ -1,14 +1,12 @@
-import React from "react";
 import "./styles/globals.scss";
 import Header from "./components/header/Header";
-import "./App.scss";
-import PurchasesList from "./components/PurchasesList";
+import Main from "./components/main/Main";
 
 const App = () => {
   return (
     <div className="wrapper">
-      <Header />;
-      <PurchasesList />
+      <Header />
+      <Main />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import classes from "./SelectedBlock.module.scss";
+import styles from "./SelectedBlock.module.scss";
 import Select from "react-select";
 
 interface SelectedBlockProps {
@@ -13,14 +13,14 @@ interface SelectedOption {
 
 const SelectedBlock = ({ months, years }: SelectedBlockProps) => {
   return (
-    <div className={classes.selectBlock}>
+    <div className={styles.selectBlock}>
       <Select
-        className={classes.selectItem}
+        className={styles.selectItem}
         options={months}
         placeholder="Choose month..."
       ></Select>
       <Select
-        className={classes.selectItem}
+        className={styles.selectItem}
         options={years}
         placeholder="Choose year..."
       ></Select>

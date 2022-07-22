@@ -14,3 +14,13 @@
     box-sizing: inherit;
   }
 }
+
+body {
+  background: #f9f9fc;
+}
+
+.wrapper {
+  max-width: $maxWidthContainer;
+  width: 100%;
+  margin: 0 auto;
+}
