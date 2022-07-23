@@ -1,12 +1,12 @@
 import styles from "./PurchasesListItem.module.scss";
 
-interface PurchasesListItemProps {
+export interface PurchasesListItemProps {
   list: listItem;
 }
 
-interface listItem {
+export interface listItem {
   number: number;
-  name: string;
+  title: string;
   price: string;
   date: string;
   id: number;
@@ -16,7 +16,7 @@ const PurchasesListItem = ({ list }: PurchasesListItemProps) => {
   return (
     <div className={styles.listItem}>
       <div>{list.number}</div>
-      <div>{list.name}</div>
+      <div>{list.title}</div>
       <div>{list.price}</div>
       <div>{list.date}</div>
     </div>

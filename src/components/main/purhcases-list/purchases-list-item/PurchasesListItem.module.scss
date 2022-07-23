@@ -1,7 +1,7 @@
 .listItem {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
   padding: 10px 25px;
+  grid-template-columns: 0.5fr 3fr 3fr 1fr;
   &:not(:last-child) {
     border-bottom: 1px solid #eeeef2;
   }
