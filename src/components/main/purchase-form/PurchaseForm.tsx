@@ -36,7 +36,7 @@ const PurchaseForm = ({ create }: PurchaseFormProps) => {
           setPurchase({ ...purchase, price: event.target.value })
         }
         type="text"
-        placeholder="Purchase price"
+        placeholder="$Purchase price"
       />
       <Button onClick={addNewPurchase} />
     </div>
