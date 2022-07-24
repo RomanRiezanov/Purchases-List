@@ -1,3 +1,7 @@
+.inptBlock {
+  display: flex;
+}
+
 .inpt {
   padding: 15px;
   border: 0;
@@ -19,9 +23,14 @@
   opacity: 0.5;
 }
 
+.imgBlock {
+  position: relative;
+}
+
 .img {
   position: absolute;
   width: 20px;
   height: 20px;
-  left: 20px;
+  right: 20px;
+  top: 22px;
 }
