@@ -1,10 +1,9 @@
 import SelectedBlock from "./selected-block/SelectedBlock";
 import PurchasesList from "./purhcases-list/PurchasesList";
 import styles from "./Main.module.scss";
-import Input from "../UI/input/Input";
-import Button from "../UI/button/Button";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import PurchaseForm from "./purchase-form/PurchaseForm";
+import PurchaseFilter from "./purchase-filter/PurchaseFilter";
 
 export interface PurchasesTypes {
   title: string;
@@ -72,6 +71,14 @@ const Main = () => {
     },
   ]);
 
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const searchedPurchases = useMemo(() => {
+    return purchases.filter((purchase) =>
+      purchase.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }, [searchQuery, purchases]);
+
   const createPurchase = (newPurchase: PurchasesTypes) => {
     setPurhcases([
       ...purchases,
@@ -87,8 +94,12 @@ const Main = () => {
   return (
     <div className={styles.main}>
       <PurchaseForm create={createPurchase} />
+      <PurchaseFilter
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+      />
       <SelectedBlock months={months} years={years} />
-      <PurchasesList purchases={purchases} />
+      <PurchasesList purchases={searchedPurchases} />
     </div>
   );
 };
