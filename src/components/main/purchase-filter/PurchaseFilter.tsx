@@ -1,6 +1,7 @@
 import Input from "../../UI/input/Input";
 import styles from "./PurhcasesList.module.scss";
 import { ChangeEvent } from "react";
+import magnifyingGlassImage from "../../../../public/assets/icons/magnifying-glass.svg";
 
 interface PurchaseFilterProps {
   searchQuery: string;
@@ -21,6 +22,7 @@ const PurchaseFilter = ({
           setSearchQuery(event.target.value)
         }
         type="text"
+        imgPath="./assets/icons/magnifying-glass.svg"
       />
     </div>
   );
