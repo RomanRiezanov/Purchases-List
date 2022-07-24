@@ -21,6 +21,7 @@ const PurchaseFilter = ({
           setSearchQuery(event.target.value)
         }
         type="text"
+        imgPath="./assets/icons/magnifying-glass.svg"
       />
     </div>
   );

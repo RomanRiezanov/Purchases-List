@@ -21,7 +21,7 @@ const PurchaseForm = ({ create }: PurchaseFormProps) => {
   };
 
   return (
-    <div>
+    <form className={styles.purchaseForm}>
       <Input
         value={purchase.title}
         onChange={(event: ChangeEvent<HTMLInputElement>) =>
@@ -29,6 +29,7 @@ const PurchaseForm = ({ create }: PurchaseFormProps) => {
         }
         type="text"
         placeholder="Purchase title"
+        imgPath="./assets/icons/label.svg"
       />
       <Input
         value={purchase.price}
@@ -36,10 +37,11 @@ const PurchaseForm = ({ create }: PurchaseFormProps) => {
           setPurchase({ ...purchase, price: event.target.value })
         }
         type="text"
-        placeholder="$Purchase price"
+        placeholder="Purchase price"
+        imgPath="./assets/icons/dollar.svg"
       />
       <Button onClick={addNewPurchase} />
-    </div>
+    </form>
   );
 };
 
