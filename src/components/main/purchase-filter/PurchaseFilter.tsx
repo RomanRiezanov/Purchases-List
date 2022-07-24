@@ -1,7 +1,6 @@
 import Input from "../../UI/input/Input";
 import styles from "./PurhcasesList.module.scss";
 import { ChangeEvent } from "react";
-import magnifyingGlassImage from "../../../../public/assets/icons/magnifying-glass.svg";
 
 interface PurchaseFilterProps {
   searchQuery: string;
