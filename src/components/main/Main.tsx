@@ -44,28 +44,28 @@ const Main = () => {
     {
       number: 1,
       title: "DT-Brand-campaign",
-      price: "$1,718.56",
+      price: "1 718.56 $",
       date: "12.07.2022",
       id: 1,
     },
     {
       number: 2,
       title: "new_offer_8735",
-      price: "$1,518.56",
+      price: "1 518.56 $",
       date: "12.07.2022",
       id: 2,
     },
     {
       number: 3,
       title: "spring_2020",
-      price: "$956.54",
+      price: "956.54 $",
       date: "12.07.2022",
       id: 3,
     },
     {
       number: 4,
       title: "DT-ORIT-campaign",
-      price: "$1,133.69",
+      price: "1 133.69 $",
       date: "12.07.2022",
       id: 4,
     },
@@ -91,6 +91,14 @@ const Main = () => {
     ]);
   };
 
+  const sortBy = (sort: string) => {
+    setPurhcases(
+      [...purchases].sort(
+        (a: any, b: any) => parseInt(a[sort]) - parseInt(b[sort])
+      )
+    );
+  };
+
   return (
     <div className={styles.main}>
       <PurchaseForm create={createPurchase} />
@@ -99,7 +107,7 @@ const Main = () => {
         setSearchQuery={setSearchQuery}
       />
       <SelectedBlock months={months} years={years} />
-      <PurchasesList purchases={searchedPurchases} />
+      <PurchasesList sortBy={sortBy} purchases={searchedPurchases} />
     </div>
   );
 };

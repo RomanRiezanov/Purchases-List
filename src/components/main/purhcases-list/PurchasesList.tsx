@@ -4,14 +4,17 @@ import PurchasesListItem, {
 } from "./purchases-list-item/PurchasesListItem";
 import styles from "./PurchasesList.module.scss";
 
-export interface listItems {
+export type sortByFunc = (sort: string) => void;
+
+interface PurchasesListItemsProps {
   purchases: Array<listItem>;
+  sortBy: sortByFunc;
 }
 
-const PurchasesList = ({ purchases }: listItems) => {
+const PurchasesList = ({ purchases, sortBy }: PurchasesListItemsProps) => {
   return (
     <div className={styles.purchasesList}>
-      <PurchasesListHeader />
+      <PurchasesListHeader sortBy={sortBy} />
       <div>
         {purchases.map((list) => (
           <PurchasesListItem list={list} key={list.id} />
