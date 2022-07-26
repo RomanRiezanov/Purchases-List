@@ -14,7 +14,7 @@ const PurchaseForm = ({ create }: PurchaseFormProps) => {
     price: "",
   });
 
-  const addNewPurchase = (event: ChangeEvent<HTMLInputElement>) => {
+  const addNewPurchase = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     create(purchase);
     setPurchase({ title: "", price: "" });
@@ -29,7 +29,7 @@ const PurchaseForm = ({ create }: PurchaseFormProps) => {
         }
         type="text"
         placeholder="Purchase title"
-        imgPath="./assets/icons/label.svg"
+        imgpath="./assets/icons/label.svg"
       />
       <Input
         value={purchase.price}
@@ -38,9 +38,9 @@ const PurchaseForm = ({ create }: PurchaseFormProps) => {
         }
         type="text"
         placeholder="Purchase price"
-        imgPath="./assets/icons/dollar.svg"
+        imgpath="./assets/icons/dollar.svg"
       />
-      <Button onClick={addNewPurchase} />
+      <Button addNewPurchase={addNewPurchase} />
     </form>
   );
 };
