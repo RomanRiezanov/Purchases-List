@@ -92,11 +92,20 @@ const Main = () => {
   };
 
   const sortBy = (sort: string) => {
-    setPurhcases(
-      [...purchases].sort(
-        (a: any, b: any) => parseInt(a[sort]) - parseInt(b[sort])
-      )
-    );
+    sort === "price"
+      ? setPurhcases(
+          [...purchases].sort((a: any, b: any) => {
+            return (
+              parseInt(b[sort].replace(" ", "")) -
+              parseInt(a[sort].replace(" ", ""))
+            );
+          })
+        )
+      : setPurhcases(
+          [...purchases].sort((a: any, b: any) => {
+            return parseInt(a[sort]) - parseInt(b[sort]);
+          })
+        );
   };
 
   return (
