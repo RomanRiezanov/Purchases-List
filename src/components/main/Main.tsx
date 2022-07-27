@@ -1,10 +1,9 @@
 import SelectedBlock from "./selected-block/SelectedBlock";
 import PurchasesList from "./purhcases-list/PurchasesList";
 import styles from "./Main.module.scss";
-import Input from "../UI/input/Input";
-import Button from "../UI/button/Button";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import PurchaseForm from "./purchase-form/PurchaseForm";
+import PurchaseFilter from "./purchase-filter/PurchaseFilter";
 
 export interface PurchasesTypes {
   title: string;
@@ -45,36 +44,46 @@ const Main = () => {
     {
       number: 1,
       title: "DT-Brand-campaign",
-      price: "$1,718.56",
+      price: "1 718.56 $",
       date: "12.07.2022",
       id: 1,
     },
     {
       number: 2,
       title: "new_offer_8735",
-      price: "$1,518.56",
+      price: "1 518.56 $",
       date: "12.07.2022",
       id: 2,
     },
     {
       number: 3,
       title: "spring_2020",
-      price: "$956.54",
+      price: "956.54 $",
       date: "12.07.2022",
       id: 3,
     },
     {
       number: 4,
       title: "DT-ORIT-campaign",
-      price: "$1,133.69",
+      price: "1 133.69 $",
       date: "12.07.2022",
       id: 4,
     },
   ]);
 
+<<<<<<< HEAD
   const removePurchaseItem = (id: number) => {
     setPurhcases(purchases.filter((purchase) => purchase.id !== id));
   };
+=======
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const searchedPurchases = useMemo(() => {
+    return purchases.filter((purchase) =>
+      purchase.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }, [searchQuery, purchases]);
+>>>>>>> develop
 
   const createPurchase = (newPurchase: PurchasesTypes) => {
     setPurhcases([
@@ -88,11 +97,36 @@ const Main = () => {
     ]);
   };
 
+  const sortBy = (sort: string) => {
+    sort === "price"
+      ? setPurhcases(
+          [...purchases].sort((a: any, b: any) => {
+            return (
+              parseInt(b[sort].replace(" ", "")) -
+              parseInt(a[sort].replace(" ", ""))
+            );
+          })
+        )
+      : setPurhcases(
+          [...purchases].sort((a: any, b: any) => {
+            return parseInt(a[sort]) - parseInt(b[sort]);
+          })
+        );
+  };
+
   return (
     <div className={styles.main}>
       <PurchaseForm create={createPurchase} />
+      <PurchaseFilter
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+      />
       <SelectedBlock months={months} years={years} />
+<<<<<<< HEAD
       <PurchasesList purchases={purchases} removePurchaseItem={removePurchaseItem} />
+=======
+      <PurchasesList sortBy={sortBy} purchases={searchedPurchases} />
+>>>>>>> develop
     </div>
   );
 };
