@@ -21,7 +21,7 @@ const PurchasesListItem = ({ list, removePurchaseItem }: any) => {
       <div>{list.price}</div>
       <div>{list.date}</div>
       <div onClick={() => removePurchaseItem(list.id)}>
-        <img className={styles.btn} src={trash} alt="trash" width="18px" />
+        <img className={styles.btn} src={trash} alt="trash" />
       </div>
     </div>
   );
