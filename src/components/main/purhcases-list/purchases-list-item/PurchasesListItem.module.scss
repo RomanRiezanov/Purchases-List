@@ -1,8 +1,14 @@
 .listItem {
   display: grid;
   padding: 10px 25px;
-  grid-template-columns: 0.5fr 3fr 3fr 1fr;
+  grid-template-columns: 1fr 4fr 2fr 1fr 1fr;
   &:not(:last-child) {
     border-bottom: 1px solid #eeeef2;
   }
+}
+
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 15px;
 }

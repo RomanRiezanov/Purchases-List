@@ -72,6 +72,10 @@ const Main = () => {
     },
   ]);
 
+  const removePurchaseItem = (id: number) => {
+    setPurhcases(purchases.filter((purchase) => purchase.id !== id));
+  };
+
   const createPurchase = (newPurchase: PurchasesTypes) => {
     setPurhcases([
       ...purchases,
@@ -88,7 +92,7 @@ const Main = () => {
     <div className={styles.main}>
       <PurchaseForm create={createPurchase} />
       <SelectedBlock months={months} years={years} />
-      <PurchasesList purchases={purchases} />
+      <PurchasesList purchases={purchases} removePurchaseItem={removePurchaseItem} />
     </div>
   );
 };

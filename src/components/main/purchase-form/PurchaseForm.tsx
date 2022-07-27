@@ -11,13 +11,13 @@ interface PurchaseFormProps {
 const PurchaseForm = ({ create }: PurchaseFormProps) => {
   const [purchase, setPurchase] = useState<PurchasesTypes>({
     title: "",
-    price: "",
+    price: "$",
   });
 
   const addNewPurchase = (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
     create(purchase);
-    setPurchase({ title: "", price: "" });
+    setPurchase({ title: "", price: "$" + "" });
   };
 
   return (
