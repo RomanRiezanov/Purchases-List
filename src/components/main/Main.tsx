@@ -71,11 +71,10 @@ const Main = () => {
     },
   ]);
 
-<<<<<<< HEAD
   const removePurchaseItem = (id: number) => {
     setPurhcases(purchases.filter((purchase) => purchase.id !== id));
   };
-=======
+
   const [searchQuery, setSearchQuery] = useState("");
 
   const searchedPurchases = useMemo(() => {
@@ -83,7 +82,6 @@ const Main = () => {
       purchase.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
   }, [searchQuery, purchases]);
->>>>>>> develop
 
   const createPurchase = (newPurchase: PurchasesTypes) => {
     setPurhcases([
@@ -122,11 +120,11 @@ const Main = () => {
         setSearchQuery={setSearchQuery}
       />
       <SelectedBlock months={months} years={years} />
-<<<<<<< HEAD
-      <PurchasesList purchases={purchases} removePurchaseItem={removePurchaseItem} />
-=======
-      <PurchasesList sortBy={sortBy} purchases={searchedPurchases} />
->>>>>>> develop
+      <PurchasesList
+        sortBy={sortBy}
+        purchases={searchedPurchases}
+        removePurchaseItem={removePurchaseItem}
+      />
     </div>
   );
 };
