@@ -71,6 +71,10 @@ const Main = () => {
     },
   ]);
 
+  const removePurchaseItem = (id: number) => {
+    setPurhcases(purchases.filter((purchase) => purchase.id !== id));
+  };
+
   const [searchQuery, setSearchQuery] = useState("");
 
   const searchedPurchases = useMemo(() => {
@@ -116,7 +120,11 @@ const Main = () => {
         setSearchQuery={setSearchQuery}
       />
       <SelectedBlock months={months} years={years} />
-      <PurchasesList sortBy={sortBy} purchases={searchedPurchases} />
+      <PurchasesList
+        sortBy={sortBy}
+        purchases={searchedPurchases}
+        removePurchaseItem={removePurchaseItem}
+      />
     </div>
   );
 };
