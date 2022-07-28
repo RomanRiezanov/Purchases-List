@@ -89,6 +89,7 @@ const Main = () => {
       {
         ...newPurchase,
         number: purchases.length + 1,
+        price: `${Number(newPurchase.price).toLocaleString()} $`,
         id: purchases.length + 1,
         date: formatDate(new Date()),
       },
@@ -98,15 +99,15 @@ const Main = () => {
   const sortBy = (sort: string) => {
     sort === "price"
       ? setPurhcases(
-          [...purchases].sort((a: any, b: any) => {
+          [...purchases].sort((a: any, b: any) => {       
             return (
-              parseInt(b[sort].replace(" ", "")) -
-              parseInt(a[sort].replace(" ", ""))
+              parseInt(b[sort].replace(/\s+/g, '').trim()) -
+              parseInt(a[sort].replace(/\s+/g, '').trim())
             );
           })
         )
-      : setPurhcases(
-          [...purchases].sort((a: any, b: any) => {
+      : setPurhcases(       
+          [...purchases].sort((a: any, b: any) => {          
             return parseInt(a[sort]) - parseInt(b[sort]);
           })
         );
