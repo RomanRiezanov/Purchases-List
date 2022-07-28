@@ -36,7 +36,7 @@ const PurchaseForm = ({ create }: PurchaseFormProps) => {
         onChange={(event: ChangeEvent<HTMLInputElement>) =>
           setPurchase({ ...purchase, price: event.target.value })
         }
-        type="text"
+        type="number"
         placeholder="Purchase price"
         imgpath="./assets/icons/dollar.svg"
       />
