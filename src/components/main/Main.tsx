@@ -72,7 +72,13 @@ const Main = () => {
   ]);
 
   const removePurchaseItem = (id: number) => {
-    setPurhcases(purchases.filter((purchase) => purchase.id !== id));
+    const filteredPurchases = purchases.filter((purchase) => {
+      return purchase.id !== id;
+    });
+    
+    const sortedPurchases = filteredPurchases.map((purchase, index) => {return {...purchase, number:index + 1, id: index + 1}})
+
+    setPurhcases(sortedPurchases);
   };
 
   const [searchQuery, setSearchQuery] = useState("");
