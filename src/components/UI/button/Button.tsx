@@ -7,7 +7,7 @@ interface ButtonProps {
 
 const Button = ({ addNewPurchase }: ButtonProps) => {
   return (
-    <button className={styles.btn} onClick={addNewPurchase}>
+    <button className={styles.btn} onClick={addNewPurchase} type="submit">
       Button
     </button>
   );
