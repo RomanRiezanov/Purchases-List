@@ -22,8 +22,6 @@ const PurchaseForm = ({ create }: PurchaseFormProps) => {
 
   const handleSubmit = (event: any) => {
     event.preventDefault("");
-
-    console.log("form submitted ✅");
   };
 
   return (
