@@ -38,7 +38,7 @@ const PurchaseForm = ({ create }: PurchaseFormProps) => {
         }
         type="number"
         placeholder="Purchase price"
-        imgpath="./assets/icons/dollar.svg"
+        imgpath="./assets/icons/ukraine_money_icon.svg"
       />
       <Button addNewPurchase={addNewPurchase} />
     </form>

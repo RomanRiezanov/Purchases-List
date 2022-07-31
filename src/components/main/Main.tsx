@@ -44,28 +44,28 @@ const Main = () => {
     {
       number: 1,
       title: "DT-Brand-campaign",
-      price: "1 718.56 $",
+      price: "1 718.56 ₴",
       date: "12.07.2022",
       id: 1,
     },
     {
       number: 2,
       title: "new_offer_8735",
-      price: "1 518.56 $",
+      price: "1 518.56 ₴",
       date: "12.07.2022",
       id: 2,
     },
     {
       number: 3,
       title: "spring_2020",
-      price: "956.54 $",
+      price: "956.54 ₴",
       date: "12.07.2022",
       id: 3,
     },
     {
       number: 4,
       title: "DT-ORIT-campaign",
-      price: "1 133.69 $",
+      price: "1 133.69 ₴",
       date: "12.07.2022",
       id: 4,
     },
@@ -89,7 +89,7 @@ const Main = () => {
       {
         ...newPurchase,
         number: purchases.length + 1,
-        price: `${Number(newPurchase.price).toLocaleString()} $`,
+        price: `${Number(newPurchase.price).toLocaleString()} ₴`,
         id: purchases.length + 1,
         date: formatDate(new Date()),
       },
@@ -99,15 +99,15 @@ const Main = () => {
   const sortBy = (sort: string) => {
     sort === "price"
       ? setPurhcases(
-          [...purchases].sort((a: any, b: any) => {       
+          [...purchases].sort((a: any, b: any) => {
             return (
-              parseInt(b[sort].replace(/\s+/g, '').trim()) -
-              parseInt(a[sort].replace(/\s+/g, '').trim())
+              parseInt(b[sort].replace(/\s+/g, "").trim()) -
+              parseInt(a[sort].replace(/\s+/g, "").trim())
             );
           })
         )
-      : setPurhcases(       
-          [...purchases].sort((a: any, b: any) => {          
+      : setPurhcases(
+          [...purchases].sort((a: any, b: any) => {
             return parseInt(a[sort]) - parseInt(b[sort]);
           })
         );
@@ -116,10 +116,7 @@ const Main = () => {
   return (
     <div className={styles.main}>
       <PurchaseForm create={createPurchase} />
-      <PurchaseFilter
-        searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery}
-      />
+      <PurchaseFilter searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       <SelectedBlock months={months} years={years} />
       <PurchasesList
         sortBy={sortBy}
