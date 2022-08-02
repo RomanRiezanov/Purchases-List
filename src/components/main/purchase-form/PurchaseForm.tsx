@@ -20,8 +20,12 @@ const PurchaseForm = ({ create }: PurchaseFormProps) => {
     setPurchase({ title: "", price: "" });
   };
 
+  const handleSubmit = (event: any) => {
+    event.preventDefault("");
+  };
+
   return (
-    <form className={styles.purchaseForm}>
+    <form className={styles.purchaseForm} onSubmit={handleSubmit}>
       <Input
         value={purchase.title}
         onChange={(event: ChangeEvent<HTMLInputElement>) =>
